@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MinValue
 {
@@ -15,6 +16,9 @@ namespace MinValue
         public static int GetMinimum(List<int> list)
         {
             if (list == null || list.Count == 0)
+                throw new InvalidOperationException("Sequence contains no elements");  
+            
+            else
             {
                 int min = list[0];
                 foreach (var item in list)
@@ -26,8 +30,7 @@ namespace MinValue
                 }
                 return min;
             }
-            else
-                throw new Exception("list is empty");
+                
         }
     }
 }
